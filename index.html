@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body id="body">
+
+
+  <!-- Heading Section -->
+  <div class="desktop_main_container">
+    <div class="desktop left_container">
+      <div class="main_text_container">
+        <h1 class="header">Learn to code by watching others</h1>
+        <p class="subtitle">See how experienced developers solve problems in real-time. Watching scripted tutorials is
+          great, but
+          understanding
+          how developers think is invaluable. </p>
+      </div>
+    </div>
+
+
+    <!-- Purple Button -->
+    <div class="desktop right_container">
+      <a class="purple_button" href="#"><span>Try it free 7 days</span> then <br id="break"> $20/mo. thereafter</a>
+
+
+
+      <!-- Form Container Section -->
+
+      <!-- Not sure if there's a more effecient way to do this, but my solution to adding the error codes when the input's are empty is to wrap them in a container with the same class name, but different ID's.  -->
+      <div class="form_container">
+        <form action="" id="freeTrialForm" name="freeTrialForm">
+
+
+          <div class="input_container" id="firstNameContainer">
+            <input type="text" placeholder="First Name" name="first" id="first">
+            <p class="error" id="first_error"></p>
+          </div>
+
+
+          <div class="input_container" id="lastNameContainer">
+            <input type="text" placeholder="Last Name" name="last" id="last">
+            <p class="error" id="last_error"></p>
+          </div>
+
+          <div class="input_container" id="emailAddressContainer">
+            <input type="text" placeholder="Email Address" name="email" id="email">
+            <p class="error" id="email_error"></p>
+          </div>
+
+          <div class="input_container" id="passwordContainer">
+            <input type="password" placeholder="Password" name="password" id="password">
+            <p class="error" id="password_error"></p>
+
+          </div>
+
+
+          <button id="green_button">Claim your free trial</button>
+          <p class="tas">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
