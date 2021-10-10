@@ -115,7 +115,7 @@ input::placeholder {
 
 input:focus::placeholder {
     color: #fff;
-    transition: color 400ms ease;
+    transition: color 500ms ease;
 }
 
 

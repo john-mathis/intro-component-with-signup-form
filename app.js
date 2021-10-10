@@ -25,9 +25,7 @@ document.getElementById("freeTrialForm").onsubmit = function (evt) {
   const email = emailAddressInput;
   const password = passwordInput;
 
-  let submit = true;
-
-  // Checking if the first name input is empty. If so, then it's adding the error code and red border around the input
+  // Checking if the first name input is empty. If so, then it's adding the error code, adding the red border around the input, disabling the submit button, and removing the placeholder text.
   if (first.value === null || first.value === "") {
     let firstError = "First Name cannot be empty";
     firstNameError.innerHTML = firstError;
@@ -35,10 +33,9 @@ document.getElementById("freeTrialForm").onsubmit = function (evt) {
     greenButton.disabled = true;
     greenButton.style.backgroundColor = "hsl(154, 42%, 63%)";
     first.placeholder = "";
-    submit = false;
   }
 
-  // Checking if the last name input is empty. If so, then it's adding the error code and red border around the input
+  // Checking if the last name input is empty. If so, then it's adding the error code, adding the red border around the input, disabling the submit button, and removing the placeholder text.
   if (last.value === null || last.value === "") {
     let lastError = "Last Name cannot be empty";
     lastNameError.innerHTML = lastError;
@@ -46,10 +43,9 @@ document.getElementById("freeTrialForm").onsubmit = function (evt) {
     greenButton.disabled = true;
     greenButton.style.backgroundColor = "hsl(154, 42%, 63%)";
     last.placeholder = "";
-    submit = false;
   }
 
-  // Checking if the email input is empty. If so, then it's adding the error code and red border around the input
+  //Checking if the email input is empty. If so, then it's adding the error code, adding the red border around the input, disabling the submit button, and removing the placeholder text.
   if (email.value === null || email.value === "") {
     let emailError = "Email Address cannot be empty";
     emailAddressError.innerHTML = emailError;
@@ -57,7 +53,6 @@ document.getElementById("freeTrialForm").onsubmit = function (evt) {
     greenButton.disabled = true;
     greenButton.style.backgroundColor = "hsl(154, 42%, 63%)";
     email.placeholder = "";
-    submit = false;
   }
 
   // Email Validation
@@ -70,9 +65,9 @@ document.getElementById("freeTrialForm").onsubmit = function (evt) {
     emailAddressInput.classList.add("invalid");
     greenButton.disabled = true;
     greenButton.style.backgroundColor = "hsl(154,42%,63%)";
-    submit = false;
   }
 
+  // Checking if the password input is empty. If so, then it's adding the error code, adding the red border around the input, disabling the submit button, and removing the placeholder text.
   if (password.value === null || password.value === "") {
     let passError = "Password cannot be empty";
     passwordError.innerHTML = passError;
@@ -80,13 +75,12 @@ document.getElementById("freeTrialForm").onsubmit = function (evt) {
     greenButton.disabled = true;
     greenButton.style.backgroundColor = "hsl(154, 42%, 63%)";
     password.placeholder = "";
-    submit = false;
   }
 
   return submit;
 };
 
-// This function will remove the error messages if the input valid and not empty.
+// This function will remove the error messages, enabled the submit button, as well as change it back from it's greyed out (disabled state) if the input valid and not empty.
 
 const removeError = function () {
   document.getElementById(this.id + "_error").innerHTML = "";
@@ -95,7 +89,7 @@ const removeError = function () {
   greenButton.style.backgroundColor = "hsl(154, 59%, 51%)";
 };
 
-// Here I am calling the function once
+// Here I am calling the above function whenever the user presses down and releases a key on the keyboard.
 document.getElementById("first").onkeyup = removeError;
 document.getElementById("last").onkeyup = removeError;
 document.getElementById("email").onkeyup = removeError;
